@@ -1,4 +1,9 @@
-# Official Introduction
+## Official Introduction
+
+Grading: A+ to F
+---
+Mid-term(20%) + Assignment(30%) + Final(50%) = 100%
+---
 
 Machine learning is an exciting and fast-growing field that leverages data to build models which can make predictions or decisions. 
 
