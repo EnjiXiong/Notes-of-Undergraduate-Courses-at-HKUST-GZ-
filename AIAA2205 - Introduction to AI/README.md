@@ -11,6 +11,6 @@ and develop practical applications in vision, language, and so on. Topics includ
 
 ## Syllabus
 
-Check here: [2025 Spring Syllabus](https://hkust-aiaa2205.github.io/fall2025/index.html)
+Check here: [2025 Spring Syllabus](https://hkust-aiaa2205.github.io/spring2025/index.html)
 
 Briefly, 2 Assignment(30% per each) + 1 Oral Presentation(40%) = 100%
