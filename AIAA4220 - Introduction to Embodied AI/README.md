@@ -1,6 +1,10 @@
 # Content of each Course
 
-## Lecture 1 (PPT 1&2)
+## Lecture 1 
+
+<details>
+
+<summary> PPT 1&2 </summary>
 
 **Paradigm**: Perceive - Think - Act (Example P23 - PPT2)
 
@@ -14,8 +18,97 @@
 
 **Robot vision** is embodied, active and environmentally situated.
 
+</details>
+
 ## Lecture 2
+
+<details>
+
+<summary> PPT 3&4 </summary>
 
 ### PPT 3
 
+#### 1. Course Agenda (L3 focus)
 
+* Objectives: understand the breadth of vision tasks and datasets relevant to robot AI.&#x20;
+* Major blocks:
+
+  * Image analysis (classification, detection, segmentation)
+  * Video understanding (tracking, trajectory prediction, action recognition/detection)
+  * Special views for embodied systems: **egocentric** and **bird-eye-view (BEV)** perception
+  * Misc: VQA, synthesis, audio-visual tasks
+
+---
+
+#### 2. Image Analysis
+
+##### 2.1 Image Classification
+
+* Problem statement (input tensor `[H,W,3]` → class probabilities).
+* Typical datasets: MNIST, CIFAR-10/100, ImageNet, JFT.&#x20;
+* Methods recap:
+
+  * CNN family: AlexNet, VGG, ResNet, MobileNet, EfficientNet.
+  * Transformer-based: ViT, Swin (patch embedding + attention).&#x20;
+
+##### 2.2 Object Detection
+
+* Problem statement: predict bounding boxes (+ optional class masks).
+* Key datasets: PASCAL VOC, MS COCO, OpenImages.&#x20;
+* Methods (high-level taxonomy):
+
+  * **Two-stage methods** (proposal → classify & refine).
+  * **One-stage methods** (dense/anchor or anchor-free prediction in one pass).&#x20;
+* Evaluation metrics: AP / mAP (COCO-style: AP@\[.5:.95], AP50, AP75), per-size AP (small/medium/large).
+* Practical notes: class imbalance, NMS, focal loss, anchor design.
+
+##### 2.3 Segmentation
+
+* Semantic segmentation (per-pixel class): Cityscapes, ADE20K; example method: DeepLab.&#x20;
+* Instance / panoptic segmentation: Mask R-CNN extensions.
+
+---
+
+#### 3. Video Understanding
+
+##### 3.1 Object Tracking
+
+* Multi-Object Tracking (MOT): detection + data association (ID assignment).
+* Multi-Target Multi-Camera (MTMC) tracking & ReID (city-scale scenarios, AI City).&#x20;
+
+##### 3.2 Trajectory Prediction
+
+* Predict future trajectories of agents (people/vehicles).
+* Problem framed as: given past positions → predict future trajectory distribution.
+
+##### 3.3 Action Recognition & Detection
+
+* Action recognition (video-level classification): datasets UCF-101, Kinetics, Moments-in-Time; methods I3D, SlowFast, transformer variants.&#x20;
+* Temporal action localization / action detection: locate start/end times (THUMOS, ActivityNet) and spatio-temporal boxes (AVA, VIRAT, MEVA).&#x20;
+
+---
+
+#### 4. Egocentric (First-Person) Perception
+
+* Definition & importance for robots/AR (head-mounted cameras, hand–object interactions).
+* Major datasets:
+
+  * **Ego4D** — 3,000+ hours of first-person video; tasks: forecasting, episodic memory, hands and objects.&#x20;
+  * **Ego-Exo4D** — paired first- and third-person data for demonstration learning.&#x20;
+* Common tasks: hand/object detection, egocentric action anticipation, replay/episodic QA.
+
+---
+
+#### 5. Bird-Eye-View (BEV) Perception
+
+* Motivation: unify multi-camera / multi-sensor inputs into top-down (map-like) representation for driving/robot navigation.&#x20;
+* High-level BEV pipeline options:
+
+  * **3D→2D**: project 3D points into camera planes → sample 2D features.
+  * **2D→3D**: predict per-pixel depth / distribution → lift 2D features to 3D voxels → collapse to BEV.&#x20;
+* Sensor fusion: RGB + LiDAR (late fusion vs joint fusion).&#x20;
+* BEV datasets: KITTI / KITTI-360, SemanticKITTI, nuScenes, Waymo Open Dataset, Argo.&#x20;
+
+---
+
+</details>
