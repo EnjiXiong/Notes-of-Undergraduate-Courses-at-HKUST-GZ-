@@ -1,7 +1,7 @@
 # Content of each Course
 
-- [PPT 3](#PPT-3)
-- [PPT 4](#PPT-4)
+- [PPT 3](#PPT3)
+- [PPT 4](#PPT4)
 
 ## Lecture 1 
 
@@ -29,7 +29,7 @@
 
 <summary> PPT 3&4 </summary>
 
-### PPT-3
+### PPT3
 
 #### 1. Course Agenda (L3 focus)
 
@@ -114,7 +114,7 @@
 
 ---
 
-### PPT-4
+### PPT4
 
 #### 1. Camera Model Basics
 
