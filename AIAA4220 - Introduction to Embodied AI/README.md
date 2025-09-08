@@ -111,4 +111,72 @@
 
 ---
 
+### PPT 4
+
+#### 1. Camera Model Basics
+
+* **Pinhole model**: 3D point projects to 2D plane.
+* **Thin lens model**: approximate real cameras.
+* **Homogeneous coordinates**: unify rotation, translation, projection in linear form.
+
+---
+
+#### 2. Perspective Projection (3 key steps)
+
+1. **Camera frame → image plane**
+
+   * $p = [X_c/Z_c, Y_c/Z_c]$.
+   * Encodes perspective (division by depth).
+2. **Image plane → pixel coordinates**
+
+   * Use intrinsic matrix $K$.
+   * $[u,v,1]^T = K [x,y,1]^T$.
+   * Accounts for focal length in pixels, principal point, skew.
+3. **World frame → camera frame**
+
+   * Apply extrinsics $[R|t]$.
+   * $P_c = R P_w + t$.
+   * Aligns world points with camera center & axes.
+
+---
+
+#### 3. Intrinsics & Extrinsics
+
+* **Intrinsics (K):**
+
+  * $f_x, f_y$: focal length in pixels
+  * $(c_x, c_y)$: principal point
+  * skew $s$ (usually 0)
+* **Extrinsics (R, t):**
+
+  * Rotation & translation from world to camera frame.
+
+---
+
+#### 4. Homogeneous Representation
+
+* Projection equation:
+
+  $$
+  s \begin{bmatrix} u\\v\\1 \end{bmatrix} = K [R|t] \begin{bmatrix} X_w\\Y_w\\Z_w\\1 \end{bmatrix}
+  $$
+* Benefits:
+
+  * Linear composition of transforms.
+  * Enables DLT (linear estimation of P).
+  * Handles points at infinity, projective geometry.
+
+---
+
+#### 5. Camera Calibration
+
+* **Goal:** estimate intrinsics & extrinsics.
+* **Need ≥ 6 correspondences** between 3D world points ↔ 2D image points.
+* **Tools:** checkerboard pattern, OpenCV calibration toolbox.
+* **Steps:**
+
+  1. Detect 2D corners (pixel coords).
+  2. Know 3D corner positions in world coords.
+  3. Solve for $K, R, t$ using reprojection error minimization.
+
 </details>
