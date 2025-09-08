@@ -13,3 +13,9 @@
 > The limitation of lidar: finite angles to detect
 
 **Robot vision** is embodied, active and environmentally situated.
+
+## Lecture 2
+
+### PPT 3
+
+
